@@ -46,11 +46,11 @@
         <!-- Logo / Brand -->
         <span class="font-bold text-lg text-amber-300 px-2 shrink-0">হাসিভিলা ট্যুর</span>
 
-        <!-- Nav Links (Scrollable on mobile) -->
+        <!-- Nav Links -->
         <div class="flex items-center space-x-1 overflow-x-auto no-scrollbar py-2 text-xs md:text-sm font-semibold">
           <button id="nav-home" onclick="showSection('home')" class="px-3 py-1.5 rounded-xl transition shrink-0 bg-emerald-700 text-white">হোম</button>
           <button id="nav-rooms" onclick="showSection('rooms')" class="px-3 py-1.5 rounded-xl transition shrink-0 text-emerald-100 hover:bg-emerald-800">রুম</button>
-          <button id="nav-train" onclick="showSection('train')" class="px-3 py-1.5 rounded-xl transition shrink-0 text-emerald-100 hover:bg-emerald-800">ট্রেনের সিট</button>
+          <button id="nav-train" onclick="showSection('train')" class="px-3 py-1.5 rounded-xl transition shrink-0 text-emerald-100 hover:bg-emerald-800">ট্রেনের সিট (AC)</button>
           <button id="nav-location" onclick="showSection('location')" class="px-3 py-1.5 rounded-xl transition shrink-0 text-emerald-100 hover:bg-emerald-800">লোকেশন শেয়ার</button>
           <button id="nav-contact" onclick="showSection('contact')" class="px-3 py-1.5 rounded-xl transition shrink-0 text-emerald-100 hover:bg-emerald-800">যোগাযোগ</button>
           <button id="nav-police" onclick="showSection('police')" class="px-3 py-1.5 rounded-xl transition shrink-0 text-emerald-100 hover:bg-emerald-800">পর্যটন পুলিশ</button>
@@ -62,7 +62,7 @@
   <!-- Main Container -->
   <div class="max-w-4xl mx-auto px-4 pt-6">
 
-    <!-- Header Banner (Common Title across views) -->
+    <!-- Header Banner -->
     <div class="bg-gradient-to-r from-emerald-800 to-teal-700 text-white rounded-3xl p-6 shadow-lg mb-6 text-center relative overflow-hidden">
       <div class="relative z-10">
         <span class="bg-white/20 text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider inline-block mb-3">আমন্ত্রণ ও ডিজিটাল নির্দেশিকা</span>
@@ -79,7 +79,6 @@
 
     <!-- PAGE 1: HOME (হোম) -->
     <div id="sec-home" class="space-y-6">
-      <!-- Countdown Timer Card -->
       <div class="bg-white rounded-2xl p-5 border border-amber-200 shadow-sm text-center">
         <div class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2">⏱️ ট্যুর শুরুর বাকি সময় (Remaining Time)</div>
         <div class="text-xs text-gray-500 mb-4 font-semibold">যাত্রা শুরু: ২৫ সেপ্টেম্বর ২০২৬ | সকাল ৬:০০ টা</div>
@@ -104,7 +103,6 @@
         </div>
       </div>
 
-      <!-- Quick Summary Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="bg-white rounded-2xl p-5 border border-emerald-100 shadow-sm flex items-start gap-4">
           <div class="bg-emerald-100 text-emerald-800 p-3 rounded-xl shrink-0">📅</div>
@@ -136,7 +134,6 @@
           </div>
         </div>
 
-        <!-- 2nd Floor -->
         <div class="mb-8">
           <h3 class="text-lg font-bold text-emerald-800 mb-3 flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span> ২য় তলা (2nd Floor)
@@ -144,7 +141,6 @@
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4" id="floor-2-grid"></div>
         </div>
 
-        <!-- 4th Floor -->
         <div>
           <h3 class="text-lg font-bold text-emerald-800 mb-3 flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span> ৪র্থ তলা (4th Floor)
@@ -154,39 +150,52 @@
       </div>
     </div>
 
-    <!-- PAGE 3: TRAIN SEATS (ট্রেনের সিট) -->
+    <!-- PAGE 3: TRAIN SEATS DEMO (৩০টি এসি সিট ইন্টারঅ্যাক্টিভ ডেমো) -->
     <div id="sec-train" class="hidden">
       <div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-sm">
-        <h2 class="text-2xl font-bold text-gray-900 mb-2">🚆 ট্রেনের সিট প্ল্যান</h2>
-        <p class="text-sm text-gray-500 mb-6">জয়ন্তিকা এক্সপ্রেস / পারাবত এক্সপ্রেস</p>
+        <div class="text-center mb-6">
+          <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase">AC Snigdha Coach</span>
+          <h2 class="text-2xl font-bold text-gray-900 mt-2">🚆 ট্রেনের এসি বগি সিট প্ল্যান (৩০ টি সিট)</h2>
+          <p class="text-xs md:text-sm text-gray-500 mt-1">যে কোনো খালি সিটে ক্লিক করে লাইভ বুকিং টেস্ট করুন</p>
+        </div>
 
-        <div class="overflow-x-auto">
-          <table class="w-full text-left border-collapse">
-            <thead>
-              <tr class="bg-emerald-50 text-emerald-800 text-sm font-semibold">
-                <th class="p-3 rounded-l-xl">বগি (Coach)</th>
-                <th class="p-3">সিট নাম্বার</th>
-                <th class="p-3 rounded-r-xl">যাদের জন্য বরাদ্দ</th>
-              </tr>
-            </thead>
-            <tbody class="text-sm divide-y divide-gray-100">
-              <tr>
-                <td class="p-3 font-bold text-emerald-700">ঝ (Jha)</td>
-                <td class="p-3">১২, ১৩, ১৪</td>
-                <td class="p-3">আব্বু, আম্মু, ছোট মামি</td>
-              </tr>
-              <tr>
-                <td class="p-3 font-bold text-emerald-700">ঝ (Jha)</td>
-                <td class="p-3">১৫, ১৬, ১৭</td>
-                <td class="p-3">সুমি খালা, খালু, মেজো মামা</td>
-              </tr>
-              <tr>
-                <td class="p-3 font-bold text-emerald-700">ঞ (Nio)</td>
-                <td class="p-3">০১, ০২, ০৩</td>
-                <td class="p-3">উসামাহ, সোহান, রিফাত</td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Seat Indicators Legend -->
+        <div class="flex flex-wrap items-center justify-center gap-4 bg-gray-50 p-3 rounded-2xl border border-gray-100 mb-6 text-xs font-semibold">
+          <div class="flex items-center gap-2">
+            <span class="w-4 h-4 rounded-lg bg-emerald-100 border border-emerald-400 inline-block"></span>
+            <span>খালি (Available)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-4 h-4 rounded-lg bg-rose-500 border border-rose-600 inline-block"></span>
+            <span class="text-gray-700">পূর্বে বুকড</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-4 h-4 rounded-lg bg-emerald-600 inline-block"></span>
+            <span class="text-gray-700">আপনার বুক করা সিট</span>
+          </div>
+        </div>
+
+        <!-- Train Bogie Layout -->
+        <div class="max-w-md mx-auto bg-slate-800 p-5 rounded-3xl text-white shadow-xl border-4 border-slate-700 relative">
+          <!-- Engine Direction Badge -->
+          <div class="text-center bg-slate-700 text-slate-300 text-[11px] py-1 rounded-lg mb-5 font-bold tracking-wider uppercase border border-slate-600">
+            ⬆️ ইঞ্জিনের দিক (Engine Direction)
+          </div>
+
+          <!-- 30 Seats Grid (2 Seats - Aisle Passage - 2 Seats) -->
+          <div id="trainBogieGrid" class="grid grid-cols-5 gap-2 items-center">
+            <!-- JavaScript-এর মাধ্যমে ৩০ টি সিট রেন্ডার হবে -->
+          </div>
+
+          <!-- Bogie Rear Indicator -->
+          <div class="text-center bg-slate-700 text-slate-400 text-[10px] py-1 rounded-lg mt-5 font-semibold">
+            পেছনের অংশ (Exit / Toilet)
+          </div>
+        </div>
+
+        <!-- Booking Status Banner -->
+        <div id="bookingSummary" class="mt-6 bg-emerald-50 border border-emerald-200 rounded-2xl p-4 text-center text-sm font-semibold text-emerald-900">
+          💡 সিটে চাপ দিয়ে আপনার বুকিং ডেমো পরীক্ষা করুন!
         </div>
       </div>
     </div>
@@ -405,7 +414,89 @@
       modal.classList.remove('flex');
     }
 
+    // 5. 30 Interactive AC Train Seats Logic
+    const preBookedSeats = {
+      1: "আব্বু", 2: "আম্মু", 3: "মেজো মামা", 4: "মেজো মামী",
+      5: "সুমি খালা", 6: "খালু", 7: "ছোট মামা", 8: "ছোট মামী",
+      15: "উসামাহ", 16: "সোহান"
+    };
+
+    let userBookedSeats = [];
+
+    function renderTrainBogie() {
+      const grid = document.getElementById('trainBogieGrid');
+      grid.innerHTML = '';
+
+      let seatNum = 1;
+      // 30 seats layout in AC Coach: 8 rows (approx 4 per row + passage)
+      while (seatNum <= 30) {
+        // Seat A
+        createSeatElement(grid, seatNum++);
+        // Seat B
+        if (seatNum <= 30) createSeatElement(grid, seatNum++);
+
+        // Center Aisle Passage
+        const aisle = document.createElement('div');
+        aisle.className = "text-center text-[10px] text-slate-500 font-bold select-none";
+        aisle.innerText = "গলি";
+        grid.appendChild(aisle);
+
+        // Seat C
+        if (seatNum <= 30) createSeatElement(grid, seatNum++);
+        // Seat D
+        if (seatNum <= 30) createSeatElement(grid, seatNum++);
+      }
+    }
+
+    function createSeatElement(container, seatNo) {
+      const seatBtn = document.createElement('button');
+      seatBtn.className = "rounded-xl p-2.5 text-center text-xs font-bold transition flex flex-col items-center justify-center gap-0.5 border ";
+
+      const isPreBooked = preBookedSeats[seatNo];
+      const isUserBooked = userBookedSeats.includes(seatNo);
+
+      if (isPreBooked) {
+        seatBtn.className += "bg-rose-500/20 text-rose-300 border-rose-500/40 cursor-not-allowed";
+        seatBtn.innerHTML = `<span>${seatNo}</span><span class="text-[9px] font-normal truncate max-w-[40px]">${isPreBooked}</span>`;
+        seatBtn.onclick = () => {
+          updateBookingStatus(`⚠️ সিট নাম্বার ${seatNo} ইতোমধ্যে ${isPreBooked}-এর নামে বুক করা রয়েছে।`);
+        };
+      } else if (isUserBooked) {
+        seatBtn.className += "bg-emerald-600 text-white border-emerald-400 shadow-md transform scale-105";
+        seatBtn.innerHTML = `<span>${seatNo}</span><span class="text-[9px] font-normal">বুকড ✔️</span>`;
+        seatBtn.onclick = () => toggleSeatBooking(seatNo);
+      } else {
+        seatBtn.className += "bg-slate-700/80 hover:bg-emerald-700/50 text-emerald-300 border-slate-600";
+        seatBtn.innerHTML = `<span>${seatNo}</span><span class="text-[9px] font-normal text-slate-400">খালি</span>`;
+        seatBtn.onclick = () => toggleSeatBooking(seatNo);
+      }
+
+      container.appendChild(seatBtn);
+    }
+
+    function toggleSeatBooking(seatNo) {
+      if (userBookedSeats.includes(seatNo)) {
+        userBookedSeats = userBookedSeats.filter(s => s !== seatNo);
+      } else {
+        userBookedSeats.push(seatNo);
+      }
+
+      renderTrainBogie();
+
+      if (userBookedSeats.length > 0) {
+        updateBookingStatus(`🎉 আপনি সফলতা সাথে সিট নাম্বার: <strong>${userBookedSeats.sort((a,b)=>a-b).join(', ')}</strong> বুকিং করেছেন!`);
+      } else {
+        updateBookingStatus(`💡 সিটে চাপ দিয়ে আপনার বুকিং ডেমো পরীক্ষা করুন!`);
+      }
+    }
+
+    function updateBookingStatus(htmlMessage) {
+      document.getElementById('bookingSummary').innerHTML = htmlMessage;
+    }
+
+    // Initialize Functions
     renderRoomCards();
+    renderTrainBogie();
   </script>
 </body>
 </html>
