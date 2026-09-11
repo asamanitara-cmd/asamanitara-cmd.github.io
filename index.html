@@ -12,6 +12,25 @@
     body {
       font-family: 'Hind Siliguri', sans-serif;
     }
+    
+    /* Text Wave Animation */
+    @keyframes waveText {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .wave-char {
+      display: inline-block;
+      animation: waveText 1.8s ease-in-out infinite;
+    }
+
+    /* Subtle Container Wave Glow */
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 4px 15px -3px rgba(16, 185, 129, 0.1); }
+      50% { box-shadow: 0 10px 25px -3px rgba(16, 185, 129, 0.3); transform: translateY(-2px); }
+    }
+    .wavy-box {
+      animation: pulseGlow 3s infinite ease-in-out;
+    }
   </style>
 </head>
 <body class="bg-[#F8F6F0] text-gray-800 min-h-screen pb-12">
@@ -20,14 +39,50 @@
   <div class="max-w-4xl mx-auto px-4 pt-6 md:pt-10">
 
     <!-- Header Banner -->
-    <div class="bg-gradient-to-r from-emerald-800 to-teal-700 text-white rounded-3xl p-6 md:p-8 shadow-lg mb-8 text-center relative overflow-hidden">
+    <div class="bg-gradient-to-r from-emerald-800 to-teal-700 text-white rounded-3xl p-6 md:p-8 shadow-lg mb-6 text-center relative overflow-hidden">
       <div class="relative z-10">
         <span class="bg-white/20 text-white text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider inline-block mb-3">আমন্ত্রণ ও ডিজিটাল নির্দেশিকা</span>
-        <h1 class="text-3xl md:text-5xl font-bold mb-2">হাসিভিলা শ্রীমঙ্গল ট্যুর</h1>
+        
+        <!-- Wave Title -->
+        <h1 class="text-3xl md:text-5xl font-bold mb-2 tracking-wide" id="wave-title">
+          হাসিভিলা শ্রীমঙ্গল ট্যুর
+        </h1>
         <p class="text-emerald-100 text-base md:text-lg font-medium">পারিবারিক ভ্রমণ ও রুম বন্টন</p>
       </div>
       <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-xl"></div>
       <div class="absolute -left-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-xl"></div>
+    </div>
+
+    <!-- Live Countdown Timer (Remaining Time) -->
+    <div class="bg-white rounded-3xl p-6 border border-emerald-100 shadow-sm mb-6 text-center wavy-box">
+      <h2 class="text-xs font-bold text-emerald-800 uppercase tracking-widest mb-3">⏳ যাত্রার বাকি সময় (Remaining Time)</h2>
+      
+      <div class="grid grid-cols-4 gap-2 md:gap-4 max-w-md mx-auto" id="timer-container">
+        <div class="bg-emerald-50 border border-emerald-100 p-3 rounded-2xl">
+          <span id="days" class="block text-2xl md:text-4xl font-extrabold text-emerald-800">00</span>
+          <span class="text-xs text-gray-500 font-semibold">দিন</span>
+        </div>
+        <div class="bg-emerald-50 border border-emerald-100 p-3 rounded-2xl">
+          <span id="hours" class="block text-2xl md:text-4xl font-extrabold text-emerald-800">00</span>
+          <span class="text-xs text-gray-500 font-semibold">ঘণ্টা</span>
+        </div>
+        <div class="bg-emerald-50 border border-emerald-100 p-3 rounded-2xl">
+          <span id="minutes" class="block text-2xl md:text-4xl font-extrabold text-emerald-800">00</span>
+          <span class="text-xs text-gray-500 font-semibold">মিঃ</span>
+        </div>
+        <div class="bg-emerald-50 border border-emerald-100 p-3 rounded-2xl">
+          <span id="seconds" class="block text-2xl md:text-4xl font-extrabold text-emerald-800">00</span>
+          <span class="text-xs text-gray-500 font-semibold">সেঃ</span>
+        </div>
+      </div>
+      <p class="text-xs text-emerald-700 font-medium mt-3">যাত্রা শুরুর সময়: ২৫ সেপ্টেম্বর ২০২৬, সকাল ৬:০০ টা</p>
+    </div>
+
+    <!-- Wavy Important Notice Text -->
+    <div class="bg-amber-50 border border-amber-200/80 rounded-2xl p-4 mb-8 shadow-sm text-center">
+      <div class="text-amber-900 font-semibold text-sm md:text-base" id="wave-notice">
+        📢 সকল সম্মানিত সদস্যকে ২৫ সেপ্টেম্বর সকাল ৬:০০ টার মধ্যে এয়ারপোর্ট রেলস্টেশনে উপস্থিত থাকার অনুরোধ করা হচ্ছে!
+      </div>
     </div>
 
     <!-- Travel Details Cards -->
@@ -41,13 +96,13 @@
           </svg>
         </div>
         <div>
-          <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wide">যাত্রার তারিখ ও স্থান</h3>
-          <p class="text-lg font-bold text-gray-800 mt-1">২৫ সেপ্টেম্বর, শুক্রবার</p>
+          <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wide">যাত্রার তারিখ ও সময়</h3>
+          <p class="text-lg font-bold text-gray-800 mt-1">২৫ সেপ্টেম্বর, শুক্রবার (সকাল ৬:০০)</p>
           <p class="text-sm text-gray-600 mt-0.5">স্থান: <span class="font-semibold text-emerald-700">হাসিভিলা</span></p>
         </div>
       </div>
 
-      <!-- Destination & Route -->
+      <!-- Destination & Route with Google Maps Link -->
       <div class="bg-white rounded-2xl p-5 border border-emerald-100 shadow-sm flex items-start gap-4">
         <div class="bg-teal-100 text-teal-800 p-3 rounded-xl shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -56,8 +111,13 @@
           </svg>
         </div>
         <div>
-          <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wide">গন্তব্য ও রুট</h3>
-          <p class="text-base font-bold text-gray-800 mt-0.5">Tea Heaven Resort</p>
+          <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wide">গন্তব্য ও গুগল ম্যাপস</h3>
+          
+          <a href="https://www.google.com/maps/search/?api=1&query=Tea+Heaven+Resort+Sreemangal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-emerald-700 font-bold hover:text-emerald-900 hover:underline mt-0.5 group">
+            <span class="text-base">Tea Heaven Resort</span>
+            <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-semibold group-hover:bg-emerald-200">📍 ম্যাপ দেখুন</span>
+          </a>
+
           <p class="text-xs text-gray-600 mt-1 flex items-center flex-wrap gap-1 font-medium">
             <span>এয়ারপোর্ট রেলস্টেশন</span>
             <span class="text-emerald-600">➔</span>
@@ -87,9 +147,7 @@
         <h3 class="text-lg font-bold text-emerald-800 mb-3 flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span> ২য় তলা (2nd Floor)
         </h3>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4" id="floor-2-grid">
-          <!-- JS insert -->
-        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4" id="floor-2-grid"></div>
       </div>
 
       <!-- 4th Floor -->
@@ -97,32 +155,26 @@
         <h3 class="text-lg font-bold text-emerald-800 mb-3 flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span> ৪র্থ তলা (4th Floor)
         </h3>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4" id="floor-4-grid">
-          <!-- JS insert -->
-        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4" id="floor-4-grid"></div>
       </div>
     </div>
 
   </div>
 
-  <!-- Modal / Popup -->
+  <!-- Guest List Modal -->
   <div id="roomModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
     <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl relative">
-      <!-- Close Button -->
       <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 bg-gray-100 hover:bg-gray-200 w-8 h-8 rounded-full flex items-center justify-center transition">
         ✕
       </button>
 
-      <!-- Content -->
       <div class="text-center mb-5">
         <span id="modalFloorName" class="text-xs font-semibold text-emerald-700 uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full"></span>
         <h3 id="modalRoomNum" class="text-3xl font-extrabold text-gray-900 mt-2"></h3>
         <p class="text-xs text-gray-500 mt-1">এই রুমে অবস্থানকারী সদস্যগণ:</p>
       </div>
 
-      <div id="modalGuestList" class="space-y-2 mb-6">
-        <!-- Guest Names -->
-      </div>
+      <div id="modalGuestList" class="space-y-2 mb-6"></div>
 
       <button onclick="closeModal()" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-2.5 rounded-xl transition text-sm">
         বন্ধ করুন
@@ -130,16 +182,62 @@
     </div>
   </div>
 
-  <!-- JavaScript -->
   <script>
+    // 1. Text Wave Animation Script
+    function createWaveText(elementId) {
+      const element = document.getElementById(elementId);
+      if (!element) return;
+      const text = element.innerText;
+      element.innerHTML = '';
+      
+      [...text].forEach((char, index) => {
+        const span = document.createElement('span');
+        span.innerText = char === ' ' ? '\u00A0' : char;
+        span.className = 'wave-char';
+        span.style.animationDelay = `${index * 0.08}s`;
+        element.appendChild(span);
+      });
+    }
+
+    createWaveText('wave-title');
+    createWaveText('wave-notice');
+
+    // 2. Countdown Timer Script (Target: 25 Sept 2026, 06:00:00 AM)
+    const tourTargetDate = new Date('September 25, 2026 06:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = tourTargetDate - now;
+
+      if (difference <= 0) {
+        document.getElementById('timer-container').innerHTML = `
+          <div class="col-span-4 bg-emerald-100 text-emerald-900 font-bold p-3 rounded-xl text-lg">
+            🎉 শুভ যাত্রা! ট্যুর শুরু হয়ে গেছে!
+          </div>
+        `;
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = String(days).padStart(2, '0');
+      document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+      document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 3. Room Data & Modal Functions
     const roomData = [
-      // 2nd Floor
       { floor: "২য় তলা (2nd Floor)", room: "204", guests: ["Abbu", "Noor Mohammad", "Mejo mama"] },
       { floor: "২য় তলা (2nd Floor)", room: "206", guests: ["Sumi khala", "khalu"] },
       { floor: "২য় তলা (2nd Floor)", room: "207", guests: ["choto mami", "jumaina", "chandan mama"] },
       { floor: "২য় তলা (2nd Floor)", room: "209", guests: ["Ammu", "khalamoni", "Ammar"] },
-
-      // 4th Floor
       { floor: "৪র্থ তলা (4th Floor)", room: "401", guests: ["usamah", "sohan", "choto mama"] },
       { floor: "৪র্থ তলা (4th Floor)", room: "402", guests: ["rajib mama", "faiyad", "munna bhai"] },
       { floor: "৪র্থ তলা (4th Floor)", room: "404", guests: ["ramisha", "zoon", "nusaiba"] },
